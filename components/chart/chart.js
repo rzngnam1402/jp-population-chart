@@ -3,6 +3,9 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 const Chart = (props) => {
+    const { checked } = props;
+    console.log(checked);
+
     const options = {
         chart: {
             type: 'line'

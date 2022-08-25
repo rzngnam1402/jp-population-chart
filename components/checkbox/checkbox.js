@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import useSWR from 'swr'
+import Chart from '../chart/chart';
 import styles from './checkbox.module.css'
 
 const Checkbox = () => {
@@ -14,27 +15,33 @@ const Checkbox = () => {
     )
 
     const handleChange = (e) => {
+        let nextState = [...checked];
         if (e.target.checked === true) {
-            checked.push(e.target.id);
+            nextState.push({ id: e.target.id, name: e.target.name });
+            checked = nextState;
         }
         else {
-            checked = checked.filter(item => item !== e.target.id)
+            checked = checked.filter(item => item.id !== e.target.id)
         }
         setChecked(checked)
-        console.log(checked);
+        // console.log(checked);
     }
 
     return (
-        <div className={styles.container}>
-            <div className={styles.boxes}>
-                {data.map(item => (
-                    <div key={item.prefName} className={styles.box}>
-                        <input className={styles.input} type="checkbox" id={item.prefCode} onChange={e => handleChange(e)} />
-                        <label htmlFor={item.prefCode} ><h2>{item.prefName}</h2></label>
-                    </div>
-                ))}
-            </div>
-        </div >
+        <>
+            <div className={styles.container}>
+                <div className={styles.boxes}>
+                    {data.map(item => (
+                        <div key={item.prefName} className={styles.box}>
+                            <input className={styles.input} name={item.prefName} type="checkbox" id={item.prefCode} onChange={e => handleChange(e)} />
+                            <label htmlFor={item.prefCode} ><h2>{item.prefName}</h2></label>
+                        </div>
+                    ))}
+                </div>
+            </div >
+            <Chart data={data} checked={checked} />
+        </>
+
     )
 }
 
