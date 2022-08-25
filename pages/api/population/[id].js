@@ -15,8 +15,9 @@ export default async function getPopulation(req, res) {
     const data = await getAllPopulation.json()
 
     // console.log(data);   
+    const filteredData = data.result.data;
     try {
-        res.json(data);
+        res.json(filteredData);
     }
     catch (error) {
         res.status(500).json({ message: error.message });
