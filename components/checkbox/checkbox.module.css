@@ -7,17 +7,20 @@
 
 .boxes {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: flex-start;
+
     color: white;
+    flex-wrap: wrap;
 }
 
 .box {
-    margin: 2rem 4rem;
+    width: 160px;
+    height: 80px;
 }
 
 .label h1 {
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 5px;
 }
 

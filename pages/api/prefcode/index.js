@@ -11,9 +11,9 @@ export default async function getPrefCode(req, res) {
 
     const data = await getAllPrefCode.json()
 
-    // console.log(data);   
+    const filteredData = data.result;
     try {
-        res.json(data);
+        res.json(filteredData);
     }
     catch (error) {
         res.status(500).json({ message: error.message });
