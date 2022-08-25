@@ -1,5 +1,5 @@
 .container {
-    margin: 5rem 0rem;
+    margin: 5rem 3rem;
     background-color: white;
     border-radius: 5px;
     box-sizing: border-box;
@@ -9,18 +9,20 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-
     color: white;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .box {
-    width: 160px;
+    width: 150px;
     height: 80px;
+    margin: auto;
 }
 
 .label h1 {
-    font-weight: 500;
+    font-size: 120%;
+    font-weight: 600;
     margin-top: 5px;
 }
 
