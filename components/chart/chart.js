@@ -11,7 +11,7 @@ const Chart = (props) => {
             type: 'line'
         },
         title: {
-            text: 'Japanese population chart by prefecturals'
+            text: '日本の都道府県別人口図'
         },
         subtitle: {
             text: 'Source: RESAS API'
@@ -31,6 +31,7 @@ const Chart = (props) => {
         series: [
             {
                 data: [1, 2, 1, 4, 3, 6],
+                name: "Tokyo"
             },
             {
                 data: [6, 5, 4, 3, 2, 1],
